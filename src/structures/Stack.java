@@ -30,6 +30,11 @@ public class Stack<T> {
         return vector[size - 1];
     }
 
+    public T penult(){
+        if(isEmpty()){ return null; }
+        return vector[size - 2];
+    }
+
     public T pop(){
         if(isEmpty()){ return null; }
         return vector[--size];
