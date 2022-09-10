@@ -5,9 +5,9 @@ import structures.Stack;
 public class Calculator {
 
     private static String operators[] = {"+", "-", "*", "/"};
-    private static Stack<Integer> stack = new Stack<>(200);
+    private static Stack<Float> stack = new Stack<>(200);
 
-    public static Stack<Integer> parse(String expression) {
+    public static Stack<Float> parse(String expression) {
         String sentences[] = expression.trim().split("\\s");
         String operator;
 
@@ -17,7 +17,7 @@ public class Calculator {
                 operator = sentences[i];
                 operate(operator);
             } else {
-                stack.push(Integer.parseInt(sentences[i]));
+                stack.push(Float.parseFloat(sentences[i]));
             }
 
         }
@@ -33,9 +33,9 @@ public class Calculator {
     }
 
     private static void operate(String operator){
-        Integer last = stack.peek();
-        Integer penult = stack.penult();
-        Integer result = null;
+        Float last = stack.peek();
+        Float penult = stack.penult();
+        Float result = null;
 
         switch (operator) {
             case "+":

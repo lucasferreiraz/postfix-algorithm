@@ -44,7 +44,7 @@ public class Validator {
     private static boolean notNumeric(String ch){
         if (ch == null){ return true; }
         try {
-            Integer.parseInt(ch);
+            Float.parseFloat(ch);
         } catch (NumberFormatException e) {
             return true;
         }
